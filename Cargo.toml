@@ -1,0 +1,30 @@
+[package]
+name = "usb_manager"
+version = "0.1.5"
+edition = "2021"
+
+[lib]
+name = "usb_manager"
+path = "src/lib.rs"
+
+[dependencies]
+windows = { version = "0.38.0", features = [
+    "alloc",
+    "Foundation_Collections",
+    "Foundation",
+    "Storage_Streams",
+    "Win32_Storage_FileSystem",
+    "Win32_Devices_DeviceAndDriverInstallation",
+    "Win32_Foundation",
+    "Win32_Devices_HumanInterfaceDevice",
+    "Win32_Devices_Properties",
+    "Win32_System_IO",
+    "Win32_Storage_FileSystem",
+    "Win32_Security"
+]}
+winapi = { version = "^0.3", features = ["winuser", "libloaderapi"] }
+uuid = { version = "1.2.2", features = ["serde", "v4"] }
+anyhow = { version = "1.0", features = ["backtrace"] }
+thiserror = "1"
+dashmap = "5.1.0"
+crossbeam-channel = "0.5.6"
